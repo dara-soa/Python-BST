@@ -1,3 +1,4 @@
+
 class TreeNode:
 
     def __init__(self, key):
@@ -16,4 +17,14 @@ class BinarySearchTree:
             return TreeNode(key)
 
         if key < node.key:
-            pass
+            node.left = self._insert(node.left, key)
+        elif key > node.key:
+
+            node.right = self._insert(node.right, key)
+        return node
+
+    def insert(self, key):
+        self.root = self._insert(self.root, key)
+        
+    def _search(self, node, key):
+        pass
