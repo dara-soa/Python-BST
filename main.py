@@ -27,4 +27,7 @@ class BinarySearchTree:
         self.root = self._insert(self.root, key)
         
     def _search(self, node, key):
-        pass
+        if node is None or node.key == key:
+            return node
+        if key < node.key:
+            return self._search(node.left, key)
